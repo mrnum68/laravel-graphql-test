@@ -1,0 +1,24 @@
+extend type Query {
+    todos(
+      name: String @where(operator: "like")
+    ): [Todo!]! @paginate
+}
+
+extend type Mutation {
+    createTodo(name: String!): Todo! @create
+
+    updateTodo(id: ID!, name: String!, date_competed: Date): Todo! @update
+
+    deleteTodo(id: ID!): Todo @delete
+
+    markingTodo(id: ID!, is_completed: Boolean!): Todo @update
+}
+
+type Todo {
+    id: ID!
+    name: String!
+    is_completed: Boolean!
+    date_competed: Date
+    created_at: DateTime!
+    updated_at: DateTime!
+}
