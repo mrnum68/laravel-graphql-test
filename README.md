@@ -25,7 +25,7 @@ mutation {
     name
   }
   
-  updateTodo(id: 1, name: "Doing test tag", date_competed: "2020-01-01 10:01:01") {
+  updateTodo(id: 1, name: "Doing test tag", date_competed: "2020-01-01") {
     id, name, date_completed
   }
   
