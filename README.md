@@ -13,13 +13,13 @@ sail up -d
 sail artisan migrate
 
 sail artisan db:seed
-
+```
 ## API 
 http://0.0.0.0/api
 
-Graph query
+## Graph query
 ```
-# Write your query or mutation here
+Write your query or mutation here
 mutation {
   createTodo(name: "Test task") {
     name
