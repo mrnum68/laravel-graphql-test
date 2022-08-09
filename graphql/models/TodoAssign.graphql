@@ -5,7 +5,20 @@ extend type Query {
 }
 
 extend type Mutation {
-    todoAssign(user_id: ID!, todo_id: ID! @rules(apply: ["unique:todo_assigns"])): TodoAssign! @create
+    todoAssign(user_id: ID!, todo_id: ID! @rules(
+        apply: [ "exists:todos,id", "unique:todo_assigns"],
+        messages: [
+            {
+                rule: "exists"
+                message: "This todo doesn't exist"
+            },
+            {
+                rule: "unique"
+                message: "This todo has been assigned to someone else"
+            }
+        ]
+    
+    )): TodoAssign! @create
     todoUnassign(id: ID!): TodoAssign! @delete
 }
 
