@@ -75,13 +75,10 @@ http://0.0.0.0/api
   }
   
 }
+
+```
 <img width="1430" alt="Screen Shot 2022-08-09 at 16 04 02" src="https://user-images.githubusercontent.com/19530065/183609976-3b3a703e-d159-4d8b-8ee6-0d0406c72bb0.png">
 
 <img width="1430" alt="Screen Shot 2022-08-09 at 16 05 54" src="https://user-images.githubusercontent.com/19530065/183610225-8679a4f4-54a6-48be-9d7d-85bc8fad2975.png">
-
-
-
-```
-https://user-images.githubusercontent.com/19530065/183609976-3b3a703e-d159-4d8b-8ee6-0d0406c72bb0.png
 
 
