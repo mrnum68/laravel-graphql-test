@@ -5,7 +5,9 @@ extend type Query {
 }
 
 extend type Mutation {
-    todoAssign(user_id: ID!, todo_id: ID! @rules(
+    todoAssign(
+        user_id: ID!,
+        todo_id: ID! @rules(
         apply: [ "exists:todos,id", "unique:todo_assigns"],
         messages: [
             {
@@ -19,6 +21,7 @@ extend type Mutation {
         ]
     
     )): TodoAssign! @create
+
     todoUnassign(id: ID!): TodoAssign! @delete
 }
 
@@ -28,4 +31,6 @@ type TodoAssign {
     todo_id: ID!
     created_at: DateTime!
     updated_at: DateTime!
+    user: User! @hasOne
+    todo: Todo! @hasOne
 }

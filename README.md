@@ -43,8 +43,13 @@ http://0.0.0.0/api
     id, is_completed
   }
   
-  todoAssign(user_id: 1, todo_id: 3) {
-    user_id, todo_id
+  todoAssign(user_id: 1, todo_id: 1) {
+    user{
+      id, name
+    },
+    todo{
+      id, name, is_completed, date_competed
+    }, 
   }
   
   todoUnassign(id: 2) {
