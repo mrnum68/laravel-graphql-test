@@ -1,7 +1,6 @@
 extend type Query {
     user(
-      id: ID @eq @rules(apply: ["prohibits:email", "required_without:email"])
-      email: String @eq @rules(apply: ["prohibits:id", "required_without:id", "email"])
+      id: ID @eq
     ): User @find
 
     users(
@@ -10,7 +9,6 @@ extend type Query {
 
     userTodos(
       id: ID @eq @rules(apply: ["prohibits:email", "required_without:email"])
-      email: String @eq @rules(apply: ["prohibits:id", "required_without:id", "email"])
     ): User @find
 
 }

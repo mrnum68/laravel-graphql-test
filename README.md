@@ -19,14 +19,16 @@ http://0.0.0.0/api
 
 ## Graph query
 ```
-Write your query or mutation here
-mutation {
-  createTodo(name: "Test task") {
+# Write your query or mutation here
+
+ mutation {
+  createTodo(name: "Test task 111") {
+    id,
     name
   }
   
-  updateTodo(id: 1, name: "Doing test tag", date_competed: "2020-01-01") {
-    id, name, date_completed
+  updateTodo(id: 7, name: "Doing test tag 1", date_competed: "2020-01-01") {
+    id, name, date_competed
   }
   
   createTodo(name: "test test") {
@@ -41,31 +43,17 @@ mutation {
     id, is_completed
   }
   
-  // assign todo for user
   todoAssign(user_id: 1, todo_id: 3) {
     user_id, todo_id
   }
   
-  // unassign todo of user
   todoUnassign(id: 2) {
     user_id, todo_id
   }
 }
 
 {
-  users {
-    id, name
-  }
-  
-  userTodos(id: 1) {
-    id,
-    name,
-    todos {
-      id, name
-    }
-  }
-  
-  todos(first: 2) {
+  todos(first: 10) {
     data {
       name, created_at, is_completed, date_competed
     }
@@ -74,10 +62,20 @@ mutation {
     }
   }
   
-  todoAssigns(user_id: 1) {
-    user_id, todo_id
+  users {
+    id, name
   }
+  
+  userTodos(id: 1) {
+    id,
+    name,
+    todos {
+      id, name, date_competed, is_completed
+    }
+  }
+  
 }
+
 
 ```
 
