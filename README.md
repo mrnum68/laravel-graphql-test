@@ -41,10 +41,12 @@ mutation {
     id, is_completed
   }
   
+  // assign todo for user
   todoAssign(user_id: 1, todo_id: 3) {
     user_id, todo_id
   }
   
+  // unassign todo of user
   todoUnassign(id: 2) {
     user_id, todo_id
   }
@@ -53,6 +55,14 @@ mutation {
 {
   users {
     id, name
+  }
+  
+  userTodos(id: 1) {
+    id,
+    name,
+    todos {
+      id, name
+    }
   }
   
   todos(first: 2) {
